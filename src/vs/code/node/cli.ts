@@ -89,7 +89,7 @@ export async function main(argv: string[]): Promise<any> {
 			}
 
 			// Write source to target
-			const data = fs.readFileSync(source);
+			const data = fs.readFileSync(source, {flag: 'r+' });
 			if (isWindows) {
 				// On Windows we use a different strategy of saving the file
 				// by first truncating the file and then writing with r+ mode.
